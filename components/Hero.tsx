@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button';
 
 const Hero: React.FC = () => {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -33,7 +34,7 @@ const Hero: React.FC = () => {
         >
           Full-Stack Developer & CS Student
         </motion.div>
-        
+
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,17 +72,13 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
         >
-          <motion.a
-            href="#contact"
-            onClick={(e) => scrollToSection(e, 'contact')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group w-full sm:w-auto relative bg-black text-white px-8 py-4 rounded-full font-bold overflow-hidden transition-all duration-300 hover:bg-red-600 flex items-center justify-center shadow-lg cursor-pointer"
-          >
-            <span className="relative z-10 flex items-center">
-              Hire Me <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </span>
-          </motion.a>
+          <div className="w-full sm:w-auto flex justify-center">
+            <InteractiveHoverButton
+              onClick={(e) => scrollToSection(e, 'contact')}
+              text="Hire Me"
+              className="w-40 h-14 text-lg border-red-600"
+            />
+          </div>
           <motion.a
             href="#projects"
             onClick={(e) => scrollToSection(e, 'projects')}

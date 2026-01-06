@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
-    
+
     // Close mobile menu if open
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
@@ -65,16 +65,15 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-        isScrolled || isMobileMenuOpen 
-          ? 'py-3 bg-white/90 backdrop-blur-xl shadow-sm border-b border-gray-100' 
-          : 'py-6 bg-transparent'
-      }`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled || isMobileMenuOpen
+        ? 'py-3 bg-white/90 backdrop-blur-xl shadow-sm border-b border-gray-100'
+        : 'py-6 bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <motion.a 
-          href="#home" 
+        <motion.a
+          href="#home"
           onClick={(e) => handleLinkClick(e, 'home')}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -86,8 +85,8 @@ const Navbar: React.FC = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link, i) => (
-            <motion.a 
-              key={link.name} 
+            <motion.a
+              key={link.name}
               href={`#${link.href}`}
               onClick={(e) => handleLinkClick(e, link.href)}
               initial={{ opacity: 0, y: -10 }}
@@ -98,8 +97,8 @@ const Navbar: React.FC = () => {
               {link.name}
             </motion.a>
           ))}
-          <motion.a 
-            href="#contact" 
+          <motion.a
+            href="#contact"
             onClick={(e) => handleLinkClick(e, 'contact')}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -112,8 +111,8 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Toggle with Animation */}
-        <button 
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-[110] relative" 
+        <button
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-[110] relative"
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
@@ -138,7 +137,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
@@ -146,9 +145,9 @@ const Navbar: React.FC = () => {
             className="fixed inset-0 md:hidden bg-white z-[105] flex flex-col pt-24 px-8 space-y-8 h-screen w-screen overflow-y-auto"
           >
             {navLinks.map((link, i) => (
-              <motion.a 
-                key={link.name} 
-                href={`#${link.href}`} 
+              <motion.a
+                key={link.name}
+                href={`#${link.href}`}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -158,8 +157,8 @@ const Navbar: React.FC = () => {
                 {link.name}
               </motion.a>
             ))}
-            <motion.a 
-              href="#contact" 
+            <motion.a
+              href="#contact"
               onClick={(e) => handleLinkClick(e, 'contact')}
               initial={{ x: 20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}

@@ -9,7 +9,7 @@ export const SKILLS: SkillCategory[] = [
   },
   {
     title: 'Backend',
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'Supabase', 'MySQL / PostgreSQL']
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'Python', 'MySQL / PostgreSQL']
   },
   {
     title: 'Integrations & Tools',

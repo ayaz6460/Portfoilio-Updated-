@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Mail, Github, Linkedin, Instagram, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import GlassCard from './GlassCard';
+import AnimatedInputBorder from './ui/animated-input-border';
 import { SOCIAL_LINKS } from '../constants';
 
 const Contact: React.FC = () => {
@@ -145,8 +146,8 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <GlassCard className="!p-6 md:!p-10 w-full max-w-2xl mx-auto">
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+          <GlassCard className="!p-6 md:!p-10 w-full max-w-2xl mx-auto relative group">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 relative z-10">
               {/* Spam Protection - Honeypot Field */}
               <input
                 type="text"
@@ -159,39 +160,45 @@ const Contact: React.FC = () => {
 
               <div className="text-left">
                 <label className="block text-sm font-bold mb-2 uppercase tracking-tighter text-gray-500">Name</label>
-                <input
-                  type="text"
-                  name="user_name"
-                  value={formState.name}
-                  onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  className="w-full bg-white/50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-600/20 focus:border-red-600 transition-all text-sm md:text-base"
-                  placeholder="Your Name"
-                  required
-                />
+                <AnimatedInputBorder hasValue={!!formState.name}>
+                  <input
+                    type="text"
+                    name="user_name"
+                    value={formState.name}
+                    onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                    className="w-full bg-white/50 border border-transparent rounded-xl px-4 py-3 focus:outline-none focus:ring-0 transition-all text-sm md:text-base relative z-10"
+                    placeholder="Your Name"
+                    required
+                  />
+                </AnimatedInputBorder>
               </div>
               <div className="text-left">
                 <label className="block text-sm font-bold mb-2 uppercase tracking-tighter text-gray-500">Email</label>
-                <input
-                  type="email"
-                  name="user_email"
-                  value={formState.email}
-                  onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  className="w-full bg-white/50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-600/20 focus:border-red-600 transition-all text-sm md:text-base"
-                  placeholder="name@email.com"
-                  required
-                />
+                <AnimatedInputBorder hasValue={!!formState.email}>
+                  <input
+                    type="email"
+                    name="user_email"
+                    value={formState.email}
+                    onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                    className="w-full bg-white/50 border border-transparent rounded-xl px-4 py-3 focus:outline-none focus:ring-0 transition-all text-sm md:text-base relative z-10"
+                    placeholder="name@email.com"
+                    required
+                  />
+                </AnimatedInputBorder>
               </div>
               <div className="text-left">
                 <label className="block text-sm font-bold mb-2 uppercase tracking-tighter text-gray-500">Message</label>
-                <textarea
-                  name="message"
-                  rows={4}
-                  value={formState.message}
-                  onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  className="w-full bg-white/50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-600/20 focus:border-red-600 transition-all resize-none text-sm md:text-base"
-                  placeholder="How can I help you?"
-                  required
-                ></textarea>
+                <AnimatedInputBorder hasValue={!!formState.message}>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    value={formState.message}
+                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                    className="w-full bg-white/50 border border-transparent rounded-xl px-4 py-3 focus:outline-none focus:ring-0 transition-all resize-none text-sm md:text-base relative z-10"
+                    placeholder="How can I help you?"
+                    required
+                  ></textarea>
+                </AnimatedInputBorder>
               </div>
 
               {error && (

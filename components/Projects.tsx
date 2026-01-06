@@ -20,8 +20,8 @@ const Projects: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {PROJECTS.map((project) => (
-            <motion.div 
-              key={project.id} 
+            <motion.div
+              key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-                
+
                 <div className="absolute top-6 left-6 flex flex-wrap gap-2">
                   {project.tech.slice(0, 3).map((t) => (
                     <span key={t} className="text-[9px] font-black uppercase tracking-widest bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-white border border-white/10">
@@ -47,12 +47,12 @@ const Projects: React.FC = () => {
               <div className="px-2">
                 <h4 className="text-2xl font-black text-white mb-3 tracking-tight">{project.title}</h4>
                 <p className="text-gray-500 text-sm mb-6 leading-relaxed line-clamp-2">{project.description}</p>
-                
+
                 <div className="flex items-center gap-6">
                   {project.liveLink && (
-                    <a 
-                      href={project.liveLink} 
-                      target="_blank" 
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs font-black uppercase tracking-[0.2em] text-red-500 flex items-center gap-2 hover:text-white transition-colors"
                     >
@@ -60,9 +60,9 @@ const Projects: React.FC = () => {
                     </a>
                   )}
                   {project.githubLink && (
-                    <a 
-                      href={project.githubLink} 
-                      target="_blank" 
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs font-black uppercase tracking-[0.2em] text-gray-400 flex items-center gap-2 hover:text-white transition-colors"
                     >
