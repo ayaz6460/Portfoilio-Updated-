@@ -22,8 +22,26 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-20 overflow-hidden">
       {/* Liquid Blobs */}
-      <div className="absolute top-1/4 -left-20 w-64 h-64 md:w-96 md:h-96 bg-red-100 rounded-full liquid-blob opacity-40 animate-pulse"></div>
-      <div className="absolute bottom-1/4 -right-20 w-64 h-64 md:w-96 md:h-96 bg-gray-100 rounded-full liquid-blob opacity-40"></div>
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          x: [0, 50, -50, 0],
+          y: [0, -50, 50, 0],
+          rotate: [0, 90, 180, 270, 360]
+        }}
+        transition={{ duration: 20, repeat: Infinity, repeatType: "mirror" }}
+        className="absolute top-1/4 -left-20 w-64 h-64 md:w-96 md:h-96 bg-red-100 rounded-full liquid-blob opacity-40 blur-3xl"
+      />
+      <motion.div
+        animate={{
+          scale: [1, 1.1, 1],
+          x: [0, -30, 30, 0],
+          y: [0, 30, -30, 0],
+          rotate: [0, -60, -120, -180, 0]
+        }}
+        transition={{ duration: 15, repeat: Infinity, repeatType: "mirror", delay: 2 }}
+        className="absolute bottom-1/4 -right-20 w-64 h-64 md:w-96 md:h-96 bg-gray-100 rounded-full liquid-blob opacity-40 blur-3xl"
+      />
 
       <div className="max-w-4xl text-center z-10 w-full">
         <motion.div
@@ -32,14 +50,14 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="inline-block px-4 py-1.5 mb-6 text-[10px] md:text-xs font-semibold tracking-widest text-red-600 uppercase bg-red-50 rounded-full"
         >
-          Full-Stack Developer & CS Student
+          Full-Stack & Mobile App Developer
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-4 leading-[1.1]"
+          className="text-4xl sm:text-5xl md:text-8xl font-bold tracking-tight mb-4 leading-[1.1]"
         >
           MOHAMMED <span className="text-red-600">AYAZ</span>
         </motion.h1>
@@ -51,9 +69,13 @@ const Hero: React.FC = () => {
           className="flex flex-col items-center mb-8 md:mb-10"
         >
           <div className="text-xs md:text-base font-bold uppercase tracking-[0.1em] md:tracking-[0.2em] text-gray-900 flex flex-col md:flex-row items-center justify-center gap-y-2 md:gap-x-4">
-            <span>Founder — <span className="text-red-600">Engimos</span></span>
+            <span>
+              Founder — <a href="https://enigmos.vercel.app" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Engimos</a>
+            </span>
             <span className="hidden md:inline text-gray-300">|</span>
-            <span>Co-Founder — <span className="text-red-600">Xovaxy</span></span>
+            <span>
+              Co-Founder — <a href="https://xovacy.in" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Xovaxy</a>
+            </span>
           </div>
         </motion.div>
 

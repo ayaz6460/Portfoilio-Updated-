@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,9 +23,11 @@ const Navbar: React.FC = () => {
     { name: 'Contact', href: 'contact' },
   ];
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
-    const element = document.getElementById(targetId);
 
     // Close mobile menu if open
     if (isMobileMenuOpen) {
@@ -32,6 +35,12 @@ const Navbar: React.FC = () => {
       document.body.style.overflow = 'auto';
     }
 
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: targetId } });
+      return;
+    }
+
+    const element = document.getElementById(targetId);
     if (element) {
       const offset = 80; // Account for fixed navbar
       const elementPosition = element.getBoundingClientRect().top;

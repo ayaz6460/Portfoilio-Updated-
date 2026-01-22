@@ -3,11 +3,12 @@ import React from 'react';
 import { PROJECTS } from '../constants';
 import { ExternalLink, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-24 px-4 md:px-12">
-      <div className="max-w-7xl mx-auto bg-black rounded-[3rem] p-8 md:p-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto bg-black rounded-[2rem] md:rounded-[3rem] p-6 md:p-20 overflow-hidden">
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <h2 className="text-xs font-black tracking-[0.4em] text-red-500 uppercase mb-4">Case Studies</h2>
@@ -18,13 +19,22 @@ const Projects: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            visible: { transition: { staggerChildren: 0.2 } }
+          }}
+        >
           {PROJECTS.map((project) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
               className="group relative"
             >
               <div className="relative overflow-hidden rounded-[2rem] aspect-video mb-6">
@@ -50,14 +60,25 @@ const Projects: React.FC = () => {
 
                 <div className="flex items-center gap-6">
                   {project.liveLink && (
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-black uppercase tracking-[0.2em] text-red-500 flex items-center gap-2 hover:text-white transition-colors"
-                    >
-                      <ExternalLink size={14} /> Live View
-                    </a>
+                    <>
+                      {project.liveLink.startsWith('/') ? (
+                        <Link
+                          to={project.liveLink}
+                          className="text-xs font-black uppercase tracking-[0.2em] text-red-500 flex items-center gap-2 hover:text-white transition-colors"
+                        >
+                          <ExternalLink size={14} /> Live View
+                        </Link>
+                      ) : (
+                        <a
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-black uppercase tracking-[0.2em] text-red-500 flex items-center gap-2 hover:text-white transition-colors"
+                        >
+                          <ExternalLink size={14} /> Live View
+                        </a>
+                      )}
+                    </>
                   )}
                   {project.githubLink && (
                     <a
@@ -73,7 +94,7 @@ const Projects: React.FC = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

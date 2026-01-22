@@ -8,6 +8,9 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
+import Home from './components/Home';
+import AllProjects from './components/AllProjects';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 const App: React.FC = () => {
@@ -20,17 +23,14 @@ const App: React.FC = () => {
       </AnimatePresence>
 
       {!isLoading && (
-        <>
+        <BrowserRouter>
           <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Contact />
-          </main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<AllProjects />} />
+          </Routes>
           <Footer />
-        </>
+        </BrowserRouter>
       )}
     </div>
   );
