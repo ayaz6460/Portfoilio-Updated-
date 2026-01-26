@@ -130,7 +130,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="text-left">
                     <div className="text-xs uppercase font-bold text-gray-400">Email Me</div>
-                    <div className="text-base md:text-lg font-bold">ayaz16318@gmail.com</div>
+                    <div className="text-base md:text-lg font-bold">contact@iamayaz.me</div>
                   </div>
                 </a>
               </Reveal>
