@@ -115,7 +115,7 @@ const Navbar: React.FC = () => {
             whileTap={{ scale: 0.95 }}
             className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-red-600 hover:shadow-lg transition-all duration-300 cursor-pointer"
           >
-            Hire Me
+            Work with me 
           </motion.a>
         </div>
 
@@ -174,7 +174,7 @@ const Navbar: React.FC = () => {
               transition={{ delay: 0.3 }}
               className="bg-red-600 text-white px-5 py-4 rounded-2xl text-center font-bold text-xl shadow-lg hover:bg-black transition-colors cursor-pointer"
             >
-              Hire Me
+              Work with me 
             </motion.a>
           </motion.div>
         )}
