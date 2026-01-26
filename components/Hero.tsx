@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
           <div className="w-full sm:w-auto flex justify-center">
             <InteractiveHoverButton
               onClick={(e) => scrollToSection(e, 'contact')}
-              text="Hire Me"
+              text="Work with me "
               className="w-40 h-14 text-lg border-red-600"
             />
           </div>
