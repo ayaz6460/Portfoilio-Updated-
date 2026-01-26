@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
         from_name: formState.name,
         from_email: formState.email,
         message: formState.message,
-        to_email: 'ayaz16318@gmail.com',
+        to_email: 'contact@iamayaz.me',
         sent_at: new Date().toLocaleString(),
       };
 
