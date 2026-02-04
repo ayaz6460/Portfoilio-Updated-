@@ -100,6 +100,15 @@ export const ALL_PROJECTS: Project[] = [
     image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=800',
     liveLink: 'https://example.com',
     githubLink: 'https://github.com/NotAyaz'
+  },
+  {
+    id: 9,
+    title: '3D Headphone Website',
+    description: 'Interactive 3D product showcase featuring immersive animations and high-fidelity 3D modeling.',
+    tech: ['Three.js', 'React', 'WebGL', 'GSAP'],
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800',
+    liveLink: 'https://3d.iamayaz.me',
+    githubLink: 'https://github.com/NotAyaz'
   }
 ];
 
