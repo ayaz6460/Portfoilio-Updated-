@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
         name: 'snake-rewrite',
         configureServer(server) {
           server.middlewares.use((req, res, next) => {
-            if (req.url === '/snake') {
+            if (req.url === '/snake' || req.url === '/snake/') {
               req.url = '/snake/index.html';
             }
             next();

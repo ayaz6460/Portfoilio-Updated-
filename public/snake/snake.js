@@ -119,7 +119,7 @@ function setupEventHandlers() {
 }
 
 function initUrlRevealed() {
-  setUrlRevealed(Boolean(localStorage.urlRevealed));
+  setUrlRevealed(true);
 }
 
 // Some browsers don't display the page URL, either partially (e.g. Safari) or
