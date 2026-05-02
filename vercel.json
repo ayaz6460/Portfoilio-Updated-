@@ -1,0 +1,18 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/snake",
+      "destination": "/snake/index.html"
+    },
+    {
+      "source": "/snake/(.*)",
+      "destination": "/snake/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

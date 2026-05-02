@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://www.iamayaz.me/sitemap.xml
