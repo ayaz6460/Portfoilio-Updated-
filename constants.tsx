@@ -60,7 +60,44 @@ export const PROJECTS: Project[] = [
     image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800',
     liveLink: '/projects',
     githubLink: 'https://github.com/NotAyaz'
+  },
+  {
+    id: 10,
+    title: 'URL Snake',
+    description: 'Play the classic snake game directly in the browser URL bar. A unique and interactive take on the classic game.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    image: '/gameplay.gif',
+    liveLink: '/snake',
+    githubLink: '#'
+  },
+  {
+    id: 11,
+    title: 'QRollCall',
+    description: 'A fully automated QR based attendance tracking system with attendance notification to parents.',
+    tech: ['React', 'PostgreSQL', 'Express'],
+    image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800',
+    liveLink: '#',
+    githubLink: 'https://github.com/NotAyaz/QRollCall'
+  },
+  {
+    id: 12,
+    title: 'UniClash',
+    description: 'A private social media platform only for students',
+    tech: ['React', 'Supabase', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800',
+    liveLink: 'https://Uniclash.me',
+    githubLink: '#'
+  },
+  {
+    id: 13,
+    title: 'VigliNode',
+    description: 'A Website Health monitoring system which constantly checks if a website is working and notifies Admin and Subscribers about site downtime through email.',
+    tech: ['HTML', 'Tailwind CSS', 'Typescript', 'NodeMailer', 'PostgreSQL'],
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800',
+    liveLink: 'https://health.iamayaz.me',
+    githubLink: 'https://github.com/ayaz6460/health'
   }
+
 ];
 
 export const ALL_PROJECTS: Project[] = [
@@ -110,42 +147,6 @@ export const ALL_PROJECTS: Project[] = [
     liveLink: 'https://3d.iamayaz.me',
     githubLink: 'https://github.com/NotAyaz'
   },
-  {
-    id: 10,
-    title: 'URL Snake',
-    description: 'Play the classic snake game directly in the browser URL bar. A unique and interactive take on the classic game.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    image: '/gameplay.gif',
-    liveLink: '/snake',
-    githubLink: '#'
-  },
-  {
-    id: 11,
-    title: 'QRollCall',
-    description: 'A fully automated QR based attendance tracking system with attendance notification to parents.',
-    tech: ['React', 'PostgreSQL', 'Express'],
-    image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800',
-    liveLink: '#',
-    githubLink: 'https://github.com/NotAyaz/QRollCall'
-  },
-  {
-    id: 12,
-    title: 'UniClash',
-    description: 'A private social media platform only for students',
-    tech: ['React', 'Supabase', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800',
-    liveLink: 'https://Uniclash.me',
-    githubLink: '#'
-  },
-  {
-    id: 13,
-    title: 'VigliNode',
-    description: 'A Website Health monitoring system which constantly checks if a website is working and notifies Admin and Subscribers about site downtime through email.',
-    tech: ['HTML', 'Tailwind CSS', 'Typescript', 'NodeMailer', 'PostgreSQL'],
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800',
-    liveLink: 'https://health.iamayaz.me',
-    githubLink: 'https://github.com/ayaz6460/health'
-  }
 
 ];
 
