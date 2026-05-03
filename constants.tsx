@@ -101,7 +101,6 @@ export const PROJECTS: Project[] = [
 ];
 
 export const ALL_PROJECTS: Project[] = [
-  ...PROJECTS,
   {
     id: 5,
     title: 'E-Commerce Dashboard',
