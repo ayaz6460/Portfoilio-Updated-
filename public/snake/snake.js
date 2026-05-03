@@ -78,10 +78,10 @@ function setupEventHandlers() {
   // Use touchstart instead of mousedown because these arrows are only shown on
   // touch devices, and also because there is a delay between touchstart and
   // mousedown on those devices, and the game should respond ASAP.
-  $('#up').ontouchstart = function () { changeDirection(UP) };
-  $('#down').ontouchstart = function () { changeDirection(DOWN) };
-  $('#left').ontouchstart = function () { changeDirection(LEFT) };
-  $('#right').ontouchstart = function () { changeDirection(RIGHT) };
+  var upBtn = $('#up'); if (upBtn) upBtn.ontouchstart = function () { changeDirection(UP) };
+  var downBtn = $('#down'); if (downBtn) downBtn.ontouchstart = function () { changeDirection(DOWN) };
+  var leftBtn = $('#left'); if (leftBtn) leftBtn.ontouchstart = function () { changeDirection(LEFT) };
+  var rightBtn = $('#right'); if (rightBtn) rightBtn.ontouchstart = function () { changeDirection(RIGHT) };
 
   window.onblur = function pauseGame() {
     gamePaused = true;
