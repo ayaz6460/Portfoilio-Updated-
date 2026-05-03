@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
             </span>
             <span className="hidden md:inline text-gray-300">|</span>
             <span>
-              Co-Founder — <a href="https://xovacy.in" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Xovaxy</a>
+              Co-Founder — <a href="https://xovaxy.in" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Xovaxy</a>
             </span>
           </div>
         </motion.div>

@@ -26,15 +26,6 @@ export const SKILLS: SkillCategory[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: 10,
-    title: 'URL Snake',
-    description: 'Play the classic snake game directly in the browser URL bar. A unique and interactive take on the classic game.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    image: '/gameplay.gif',
-    liveLink: '/snake',
-    githubLink: '#'
-  },
-  {
     id: 1,
     title: 'AI Absence Notifier System',
     description: 'A full-stack solution for colleges to automate absence calls to parents using Vapi.ai and Google Sheets. Supports multi-language parent detection.',
@@ -49,7 +40,7 @@ export const PROJECTS: Project[] = [
     description: 'Complete fee-payment platform with Cashfree Gateway integration. Features dynamic PDF receipt generation with QR code verification.',
     tech: ['Node.js', 'Express', 'Supabase', 'Cashfree API', 'PDFKit'],
     image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800',
-    liveLink: 'https://xovacy.in',
+    liveLink: 'https://xovaxy.in',
     githubLink: 'https://github.com/NotAyaz'
   },
   {
@@ -118,7 +109,45 @@ export const ALL_PROJECTS: Project[] = [
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800',
     liveLink: 'https://3d.iamayaz.me',
     githubLink: 'https://github.com/NotAyaz'
+  },
+  {
+    id: 10,
+    title: 'URL Snake',
+    description: 'Play the classic snake game directly in the browser URL bar. A unique and interactive take on the classic game.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    image: '/gameplay.gif',
+    liveLink: '/snake',
+    githubLink: '#'
+  },
+  {
+    id: 11,
+    title: 'QRollCall',
+    description: 'A fully automated QR based attendance tracking system with attendance notification to parents.',
+    tech: ['React', 'PostgreSQL', 'Express'],
+    image: '/gameplay.gif',
+    liveLink: '#',
+    githubLink: 'https://github.com/NotAyaz/QRollCall'
+  },
+  {
+    id: 12,
+    title: 'UniClash',
+    description: 'A private social media platform only for students',
+    tech: ['React', 'Supabase', 'TypeScript', 'PostgreSql', 'Tailwind CSS'],
+    image: '/gameplay.gif',
+    liveLink: 'https://Uniclash.me',
+    githubLink: '#'
+  },
+  {
+    id: 13,
+    title: 'VigliNode',
+    description: 'A Website Health monitering system which constantly checks website is working And notifies Admin And Subscribers About Site Downtime Trough Mail',
+    tech: ['HTML', 'Tailwind CSS', 'Typescript', 'NodeMailer', 'PostgreSQL'],
+    image: '#',
+    liveLink: 'https://health.iamayaz.me',
+    githubLink: 'https://github.com/ayaz6460/health'
+
   }
+
 ];
 
 export const SOCIAL_LINKS = {
