@@ -23,29 +23,29 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-24 px-4 md:px-12">
-      <div className="max-w-7xl mx-auto bg-black rounded-[2rem] md:rounded-[3rem] p-6 md:p-20 overflow-hidden">
-        <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div>
-            <h2 className="text-xs font-black tracking-[0.4em] text-red-500 uppercase mb-4">Case Studies</h2>
-            <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter">Featured Work.</h3>
+    <section id="projects" className="py-24 px-4 md:px-12" style={{ perspective: '2000px' }}>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={startIndex}
+          initial={{ opacity: 0, rotateY: -90 }}
+          animate={{ opacity: 1, rotateY: 0 }}
+          exit={{ opacity: 0, rotateY: 90 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          className="max-w-7xl mx-auto bg-black rounded-[2rem] md:rounded-[3rem] p-6 md:p-20 overflow-hidden origin-center"
+        >
+          <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div>
+              <h2 className="text-xs font-black tracking-[0.4em] text-red-500 uppercase mb-4">Case Studies</h2>
+              <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter">Featured Work.</h3>
+            </div>
+            <p className="max-w-sm text-gray-500 text-sm md:text-base leading-relaxed font-medium">
+              A selection of architectural solutions involving AI integration, payment gateways, and modern full-stack systems.
+            </p>
           </div>
-          <p className="max-w-sm text-gray-500 text-sm md:text-base leading-relaxed font-medium">
-            A selection of architectural solutions involving AI integration, payment gateways, and modern full-stack systems.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12" style={{ perspective: '1000px' }}>
-          <AnimatePresence mode="wait">
-            {projectsToShow.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, rotateY: -90 }}
-                animate={{ opacity: 1, rotateY: 0 }}
-                exit={{ opacity: 0, rotateY: 90 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative origin-center"
-              >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            {projectsToShow.map((project) => (
+              <div key={project.id} className="group relative">
                 <div className="relative overflow-hidden rounded-[2rem] aspect-video mb-6">
                   <img
                     src={project.image}
@@ -101,35 +101,35 @@ const Projects: React.FC = () => {
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </AnimatePresence>
-        </div>
+          </div>
 
-        {/* Pagination Controls */}
-        <div className="flex justify-between items-center mt-16">
-          <div>
-            {startIndex > 0 && (
-              <button
-                onClick={handlePrev}
-                className="flex items-center gap-3 text-xs font-black tracking-[0.2em] uppercase text-white bg-white/5 hover:bg-white/10 border border-white/10 px-8 py-4 rounded-full transition-all hover:scale-105"
-              >
-                <ChevronLeft size={16} /> Go Back
-              </button>
-            )}
+          {/* Pagination Controls */}
+          <div className="flex justify-between items-center mt-16">
+            <div>
+              {startIndex > 0 && (
+                <button
+                  onClick={handlePrev}
+                  className="flex items-center gap-3 text-xs font-black tracking-[0.2em] uppercase text-white bg-white/5 hover:bg-white/10 border border-white/10 px-8 py-4 rounded-full transition-all hover:scale-105"
+                >
+                  <ChevronLeft size={16} /> Go Back
+                </button>
+              )}
+            </div>
+            <div>
+              {startIndex + projectsPerPage < PROJECTS.length && (
+                <button
+                  onClick={handleNext}
+                  className="flex items-center gap-3 text-xs font-black tracking-[0.2em] uppercase text-white bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 px-8 py-4 rounded-full transition-all hover:scale-105"
+                >
+                  View More <ChevronRight size={16} />
+                </button>
+              )}
+            </div>
           </div>
-          <div>
-            {startIndex + projectsPerPage < PROJECTS.length && (
-              <button
-                onClick={handleNext}
-                className="flex items-center gap-3 text-xs font-black tracking-[0.2em] uppercase text-white bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 px-8 py-4 rounded-full transition-all hover:scale-105"
-              >
-                View More <ChevronRight size={16} />
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
+        </motion.div>
+      </AnimatePresence>
     </section>
   );
 };
