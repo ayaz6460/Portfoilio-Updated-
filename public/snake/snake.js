@@ -93,10 +93,13 @@ function setupEventHandlers() {
     drawWorld();
   };
 
-  $('#reveal-url').onclick = function (e) {
-    e.preventDefault();
-    setUrlRevealed(!urlRevealed);
-  };
+  var revealUrlBtn = $('#reveal-url');
+  if (revealUrlBtn) {
+    revealUrlBtn.onclick = function (e) {
+      e.preventDefault();
+      setUrlRevealed(!urlRevealed);
+    };
+  }
 
   document.querySelectorAll('.expandable').forEach(function (expandable) {
     var expand = expandable.querySelector('.expand-btn');
@@ -311,10 +314,13 @@ function drawMaxScore() {
   $('#max-score-grid').textContent = maxScoreGrid;
   $('#max-score-container').classList.remove('hidden');
 
-  $('#share').onclick = function (e) {
-    e.preventDefault();
-    shareScore(maxScorePoints, maxScoreGrid);
-  };
+  var shareBtn = $('#share');
+  if (shareBtn) {
+    shareBtn.onclick = function (e) {
+      e.preventDefault();
+      shareScore(maxScorePoints, maxScoreGrid);
+    };
+  }
 }
 
 // Expands the high score details if collapsed. Only done when beating the
@@ -369,7 +375,7 @@ function pickWhitespaceReplacementChar() {
 
   var N = 5;
   var canvas = document.createElement('canvas');
-  var ctx = canvas.getContext('2d');
+  var ctx = canvas.getContext('2d', { willReadFrequently: true });
   ctx.font = '30px system-ui';
   var targetWidth = ctx.measureText(BRAILLE_SPACE.repeat(N)).width;
 
